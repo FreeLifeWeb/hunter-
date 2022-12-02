@@ -44,7 +44,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', getRoute);
-app.use('/', apiRoute);
+app.use('/filter', apiRoute);
 app.use('/', regRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

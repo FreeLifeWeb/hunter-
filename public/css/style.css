@@ -1,7 +1,50 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
 body {
     background: linear-gradient(-45deg,
-      #bf7663, /* Первый цвет */
-      #5c3838, /* Второй цвет */
       #313739, /* Третий цвет */
       #b1e1d6 /* Четвертый цвет */
     );
@@ -10,16 +53,125 @@ body {
     height: 100vh;
 }
 
+#root {
+    height: 100%;
+}
+
+.container {
+    position: relative;
+    height: 100%;
+}
+
 @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 
-0% {
-    background-position: 0% 50%;
-}
-50% {
-    background-position: 100% 50%;
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-100% {
-    background-position: 0% 50%;
+.content-container {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
 }
+
+.content-cards{
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
+
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.categories {
+    flex: 1 1 50%;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: rgb(160, 160, 160);
+    border-radius: 10px 0 0 10px;
+}
+
+.other-filters {
+    flex: 1 1 50%;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    background: rgb(217, 217, 217);
+    border-radius: 0 10px 10px 0;
+}
+
+.btn-container {
+	display: inline-block;	
+	box-sizing: border-box;
+	padding: 0 25px;
+	outline: none;
+	border: 1px solid #fff;
+	border-radius: 50px;
+	height: 46px;
+	line-height: 46px;
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+	color: #444;
+	background-color: #fff;
+	box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
+	cursor: pointer;
+	transition: box-shadow 0.2s;
+}
+
+
+.btn-container:hover {
+	background: rgb(231, 204, 204);
+}
+
+
+.ant-menu-item-selected {
+    color: #1d1d1d !important;
+  }
+
+  .ant-menu-item-selected::before{
+    color: #1d1d1d !important;
+  }
+
+  .ant-menu-item-selected::after{
+    border-bottom: 2px solid rgb(0, 118, 132) !important;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .header-container {
+    padding-top: 30px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .pagination {
+    margin-top: 50px;
+  }
+
+  footer {
+    position: absolute;
+    left: 5%;
+    bottom: 60px;
+    color: rgba(7, 58, 58, 0.397);
+    font-size: 20px;
+  }

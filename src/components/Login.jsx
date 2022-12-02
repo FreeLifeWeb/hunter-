@@ -14,7 +14,7 @@ export default function Login() {
     });
     if (response.ok) {
       window.location.href = '/';
-    }else{
+    } else {
       const data = await response.json();
       setError(data.message);
     }
@@ -33,7 +33,7 @@ export default function Login() {
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
       <div>
-          <span style={{ color: 'red' }}>{error}</span>
+        <span style={{ color: 'red' }}>{error}</span>
       </div>
     </div>
   );

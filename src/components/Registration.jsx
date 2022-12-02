@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function Registration() {
-  const [error, setError]= useState(null);
+  const [error, setError] = useState(null);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -15,10 +15,10 @@ export default function Registration() {
     });
     if (response.ok) {
       window.location.href = '/';
-    }else{
+    } else {
       const data = await response.json();
       console.log(data);
-      setError(data.message)
+      setError(data.message);
     }
   };
   return (
